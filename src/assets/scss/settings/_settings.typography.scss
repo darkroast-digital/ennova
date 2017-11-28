@@ -1,0 +1,44 @@
+///* ========================================================================
+//   #GLOBAL FONTS
+//   ======================================================================== */
+
+// Globably Scoped Fonts
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+
+// Declare Font Variables
+
+$g-font-one: 'Open Sans';
+$g-font-two: 'Open Sans';
+$g-font-mono: 'Open Sans';
+
+// Apply Fonts To Elements
+
+html {
+	font-family: $g-font-two;
+	color: $c-font;
+}
+
+body {
+	font-family: $g-font-two;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: $g-font-one;
+}
+
+code,
+kbd,
+pre,
+samp {
+	font-family: $g-font-mono;
+}
+
+a {
+	font-family: $g-font-one;
+}

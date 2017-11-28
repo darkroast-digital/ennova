@@ -1,0 +1,7 @@
+{
+    "url": "ennova.dev",
+    "watch": [
+        "dist/**/*.php",
+        "dist/**/*.twig"
+    ]
+}

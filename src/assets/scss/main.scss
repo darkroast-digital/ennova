@@ -1,0 +1,237 @@
+// *********************************************************************
+// *********************************************************************
+// *********************************************************************
+
+// GENERIC
+@import 'generic/_generic.box-sizing';
+@import 'generic/_generic.reset';
+
+//SETTINGS
+@import 'settings/_settings.breakpoints';
+@import 'settings/_settings.colours';
+@import 'settings/_settings.easings';
+@import 'settings/_settings.percents';
+@import 'settings/_settings.typography';
+
+//THEME
+@import 'theme/_theme.colours';
+
+//TOOLS
+@import 'tools/_tools.css-locks';
+@import 'tools/_tools.align';
+@import 'tools/_tools.background-cover';
+@import 'tools/_tools.clearfix';
+@import 'tools/_tools.flex-left-right';
+@import 'tools/_tools.height-width';
+@import 'tools/_tools.image-cover';
+@import 'tools/_tools.lead-paragraph';
+@import 'tools/_tools.media-queries';
+@import 'tools/_tools.radius';
+@import 'tools/_tools.selection';
+@import 'tools/_tools.shadows';
+@import 'tools/_tools.transition';
+@import 'tools/_tools.edit';
+
+//UTILITIES
+@import 'utilities/_utilities.grid';
+@import 'utilities/_utilities.typography';
+@import 'utilities/_utilities.font-size';
+@import 'utilities/_utilities.image-fit';
+
+//ELEMENTS
+@import 'elements/_elements.buttons';
+
+//COMPONENTS
+@import 'components/_components.alert';
+@import 'components/_components.mediaobject';
+@import 'components/_components.box';
+@import 'components/_components.card';
+@import 'components/_components.modal';
+@import 'components/_components.form';
+
+//VENDORS
+
+// @import 'vendors/slick';
+
+// Helpers ==============================================================
+
+//@include edit();
+
+@include selection();
+
+%u-material__icons,
+.u-material__icons {
+    direction: ltr;
+    display: inline-block;
+    font-family: 'Material Icons';
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: normal;
+    letter-spacing: normal;
+    line-height: 1;
+    text-transform: none;
+    white-space: nowrap;
+    word-wrap: normal;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+}
+
+/*
+|--------------------------------------------------------------------------
+| #VARIABLES
+|--------------------------------------------------------------------------
+*/
+
+$footer-height: 55px;
+
+// **********************************************************************
+// **********************************************************************
+// **********************************************************************
+
+#app {
+    background: url('../../../resources/assets/img/bg2.jpg');
+    height: calc(100% - #{$footer-height});
+    width: 100%;
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+    position: relative;
+
+    @include mq(m) {
+        height: auto;
+        background-position: bottom center;
+    }
+}
+
+h2 {
+    text-transform: uppercase;
+    font-weight: normal;
+    color: $c-white;
+    margin: 0;
+    margin-top: 2rem;
+    font-size: $h5;
+}
+
+hr {
+    border-bottom-color: $c-white;
+    border-bottom-width: 2px;
+    margin-bottom: 1rem;
+}
+
+.container {
+    max-width: 74.3%;
+    padding: 3rem 5rem;
+    color: $c-white;
+
+    p {
+        text-shadow: 0 0 5px rgba(#000, .6);
+    }
+
+    @include mq(m) {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    img {
+        max-width: 300px;
+        margin-bottom: 1rem;
+
+        @include mq(m) {
+            max-width: 200px;
+        }
+    }
+}
+
+iframe {
+    @include shadow(heavier);
+
+    @include mq(m) {
+        max-width: 100%;
+        max-height: 150px;
+    }
+
+    @include mq(xl) {
+        margin-top: 2rem;
+    }
+}
+
+/*
+|--------------------------------------------------------------------------
+| #FOOTER
+|--------------------------------------------------------------------------
+*/
+
+.footer {
+    background: $c-grey-darker;
+    height: $footer-height;
+    width: 100%;
+    padding: 1rem 5rem;
+
+    @include mq(m) {
+        height: 225px;
+        display: block;
+        padding: 1rem 4rem;
+        overflow: hidden;
+    }
+
+    > img {
+        margin-right: 2rem;
+        float: left;
+        display: inline-block;
+        max-width: 200px;
+
+        @include mq(m) {
+            float: none;
+            width: 200px;
+            margin: 0 7rem;
+            text-align: center;
+        }
+    }
+
+    ul {
+        float: left;
+        display: inline-block;
+        text-transform: uppercase;
+        font-size: .8rem;
+
+        @include mq(m) {
+            float: none;
+            display: block;
+        }
+
+        img {
+            max-height: 15px;
+            margin: 0 .5rem;
+
+            @include mq(m) {
+                display: block;
+                margin: 0 auto;
+            }
+        }
+
+        li {
+            color: $c-white;
+            margin-right: 1rem;
+            display: inline-block;
+
+            @include mq(m) {
+                margin: 0;
+                padding: .5rem 0;
+                text-align: center;
+                display: block;
+            }
+
+            a {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: $c-white;
+
+                @include mq(m) {
+                    display: block;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
